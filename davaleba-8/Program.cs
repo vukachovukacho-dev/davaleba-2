@@ -6,66 +6,24 @@
         {
             Product product = new Product(
            1,
-           "Pizza",
-           25,
+           "Burger",
+           15.99,
            false,
-           "pizza.jpg",
+           "burger.jpg",
            false,
            7,
-           "Food"
+           "Fast Food"
        );
 
-            product.DisplayInfo();
+            product.ShowInfo();
 
-            product.ApplyDiscount(20);
+            product.ApplyDiscount(10);
 
-            Console.WriteLine("discounts:");
+            Console.WriteLine("After Discount:");
+            product.ShowInfo();
 
-            product.DisplayInfo();
+            Console.WriteLine($"Is Spicy: {product.IsSpicy()}");
         }
     }
 }
 
-class Product
-{
-    public int Id;
-    public string Name;
-    public double Price;
-    public bool Nuts;
-    public string Image;
-    public bool Vegeterian;
-    public int Spiciness;
-    public string Category;
-
-    public Product(int id, string name, double price, bool nuts,
-                   string image, bool vegeterian,
-                   int spiciness, string category)
-    {
-        Id = id;
-        Name = name;
-        Price = price;
-        Nuts = nuts;
-        Image = image;
-        Vegeterian = vegeterian;
-        Spiciness = spiciness;
-        Category = category;
-    }
-
-    public void DisplayInfo()
-    {
-        Console.WriteLine($"ID: {Id}");
-        Console.WriteLine($"Name: {Name}");
-        Console.WriteLine($"Price: {Price}");
-        Console.WriteLine($"Category: {Category}");
-    }
-
-    public void ChangePrice(double newPrice)
-    {
-        Price = newPrice;
-    }
-
-    public void ApplyDiscount(double percent)
-    {
-        Price -= Price * percent / 100;
-    }
-}
