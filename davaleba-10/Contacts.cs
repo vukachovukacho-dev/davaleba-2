@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace davaleba_10
+{
+    internal enum Contacts
+    {
+        Phone,
+        Email,
+        Fax
+    }
+}
